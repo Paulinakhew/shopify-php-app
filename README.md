@@ -1,10 +1,19 @@
 # A simple Shopify app in PHP.
 
+## Create an app
+On [Shopify Partners](https://www.shopify.com/partners), create an account and go to your dashboard. From there, create an app with the following parameters:
+
+App URL = http://localhost:8000/
+
+Allowed redirection URL(s) = http://localhost:8000/auth/shopify/callback
+
 ## Getting Started
 
-Create a new file called `.env` which contains your Shopify API credentials and server hostname (with port).
+Create a new file called `.env` which contains your Shopify API credentials and server hostname (with port). Copy the template from `.env.template`
 
-See `.env.example` for an example.
+```shell
+cp .env.template .env
+```
 
 ### Install dependencies
 First, ensure your PHP version is 7.0 or greater. (`php -v`)
