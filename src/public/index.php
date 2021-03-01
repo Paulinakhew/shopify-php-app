@@ -53,8 +53,12 @@ $app->get('/auth/shopify/callback', function (Request $request, Response $respon
   $products = $shopifyResponse['products'];
 
   $responseBody = "<h1>Your products:</h1>";
-  foreach ($products as $product) {
-    $responseBody = $responseBody . '<br>' . $product['title'];
+  if ($products) {
+    foreach ($products as $product) {
+      $responseBody = $responseBody . '<br>' . $product['title'];
+    }
+  } else {
+    $responseBody = $responseBody . 'There are no products to show.';
   }
 
   return $response->getBody()->write($responseBody);
